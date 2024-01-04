@@ -1,13 +1,13 @@
 class Cliente extends Usuario{
     nome: string;
-    renach: Number
+    renach: Number;
     renavam: Number;
 
-    constructor(cpf:string){
+    constructor(){
         super()
-        this.nome='';
-        this.renach=0;
-        this.renavam=0
+        this.nome = '';
+        this.renach = 0;
+        this.renavam = 0
 
     }
     
