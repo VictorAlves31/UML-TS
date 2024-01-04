@@ -12,14 +12,13 @@ class Cliente extends Usuario{
     }
     
     getAgendamentos(user:Cliente){
-        // const response = this.repositoryAgendamentos.findMany(user)
-        //return response
+        //const Agendamento = Agendamentos.getAgendamento(user)
+        //return Agendamento
 
     }
     getRealizarAgendamentos(formularioAgendamento:Agendamento){
-        //const response = this.repositoryAgendamento.create(formularioAgendamento)
-        //return response
-
+        //const realizarAgendamento = Agendamentos.getrealizarAgendamento(user)
+        //return realizarAgendamento
     }
     getPontos(user:Cliente){
         //const pontos = Renach.getPontos(user)
