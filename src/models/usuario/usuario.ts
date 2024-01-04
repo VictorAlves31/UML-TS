@@ -22,4 +22,4 @@ class Usuario{
     }
 
 
-} 
+} export {Usuario}

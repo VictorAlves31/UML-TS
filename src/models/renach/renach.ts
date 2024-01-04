@@ -9,6 +9,29 @@ class Renach{
         this.situacao = '';
     }
 
+
+    DBRENACH = {
+
+        12323213: {
+            pontos : 3,
+            validade: '30/12/2024',
+            situacao: 'OK'
+        },
+
+        1442: {
+            pontos : 3,
+            validade: '30/12/2024',
+            situacao: 'OK'
+        },
+
+        100:{
+            pontos : 3,
+            validade: '30/12/2024',
+            situacao: 'OK'
+        },
+
+    }
+
     getpontos(){
         //const response = this.repositoryRenach.findOne(user)
         //return response
@@ -18,8 +41,9 @@ class Renach{
         //return response
     }
     getsituacao(){
+        return this.DBRENACH[100]
         //const response = this.repositoryRenach.findOne(user)
         //return response
     }
 
-}
+}export {Renach}
