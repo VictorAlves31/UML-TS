@@ -9,12 +9,12 @@ class Funcionario extends Usuario{
     }
     
     getrealizarServico(idAgendamento:number){
-        // const response = this.repositoryAgendamentos.update(idAgendamento,{status:1})
+        //const response = this.repositoryAgendamentos.update(idAgendamento,{status:1})
         //return response
 
     }
     getfinalizarServico(){
-        // const response = this.repositoryAgendamentos.update(idAgendamento,{status:2})
+        //const response = this.repositoryAgendamentos.update(idAgendamento,{status:2})
         //return response
 
     }
