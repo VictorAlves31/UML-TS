@@ -1,13 +1,8 @@
-import { Cliente } from "../usuario/cliente";
-class Agendamento{
-    idAgendamento: string;
-    data: Date;
-    tipoServico: string;
-    taxa : Number;
-    local : string;
-    status : boolean;
-
-    constructor(){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Agendamento = void 0;
+class Agendamento {
+    constructor() {
         this.idAgendamento = '';
         this.data = new Date;
         this.tipoServico = '';
@@ -15,19 +10,15 @@ class Agendamento{
         this.local = '';
         this.status = true;
     }
-
-    getstatus(){
-
+    getstatus() {
     }
-    getAgendamentos(user:Cliente){
+    getAgendamentos(user) {
         //const response = this.repositoryAgendamentos.findMany(user)
         //return response
-
     }
-    getRealizarAgendamentos(formularioAgendamento:Agendamento){
+    getRealizarAgendamentos(formularioAgendamento) {
         //const response = this.repositoryAgendamento.create(formularioAgendamento)
         //return response
-
     }
-
-} export {Agendamento}
+}
+exports.Agendamento = Agendamento;

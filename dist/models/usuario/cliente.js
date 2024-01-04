@@ -1,36 +1,29 @@
-import { Agendamento } from "../agendamento/agendamento";
-import { Usuario } from "./usuario";
-class Cliente extends Usuario{
-    nome: string;
-    renach: Number;
-    renavam: Number;
-
-    constructor(){
-        super()
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cliente = void 0;
+const usuario_1 = require("./usuario");
+class Cliente extends usuario_1.Usuario {
+    constructor() {
+        super();
         this.nome = '';
         this.renach = 0;
-        this.renavam = 0
-
+        this.renavam = 0;
     }
-    
-    getAgendamentos(user:Cliente){
+    getAgendamentos(user) {
         //const Agendamento = Agendamentos.getAgendamento(user)
         //return Agendamento
-
     }
-    getRealizarAgendamentos(formularioAgendamento:Agendamento){
+    getRealizarAgendamentos(formularioAgendamento) {
         //const realizarAgendamento = Agendamentos.getrealizarAgendamento(user)
         //return realizarAgendamento
     }
-    getPontos(user:Cliente){
+    getPontos(user) {
         //const pontos = Renach.getPontos(user)
         //return pontos
-
     }
-    getSituacao(){
+    getSituacao() {
         //const situ = Renach.getSituacao(user)
         //return situ
-
     }
-    
-}export{Cliente}
+}
+exports.Cliente = Cliente;

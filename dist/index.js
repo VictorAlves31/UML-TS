@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cliente_1 = require("./models/usuario/cliente");
+const renach_1 = require("./models/renach/renach");
+const user = new cliente_1.Cliente();
+user.nome = 'Victor';
+user.renach = 100;
+const renach = new renach_1.Renach();
+const situacao = renach.getsituacao();
+console.log(situacao);

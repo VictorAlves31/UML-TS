@@ -4,9 +4,15 @@
   "description": "Sistema de DETRAN",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./src/index.js",
+    "start": "tsc && node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Victor Alves",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ts": "^0.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
