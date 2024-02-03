@@ -1,36 +1,19 @@
+import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
 import { Agendamento } from "../agendamento/agendamento";
 import { Usuario } from "./usuario";
-class Cliente extends Usuario{
-    nome: string;
-    renach: Number;
-    renavam: Number;
+import { Renach } from "../renach/renach";
 
-    constructor(){
-        super()
-        this.nome = '';
-        this.renach = 0;
-        this.renavam = 0
+@Entity()
+export class Cliente extends Usuario{
+    @OneToOne(() => Renach)
+    @JoinColumn()
+    renach?: Renach;
 
-    }
-    
-    getAgendamentos(user:Cliente){
-        //const Agendamento = Agendamentos.getAgendamento(user)
-        //return Agendamento
+    @Column()
+    renavam?: Number;
 
-    }
-    getRealizarAgendamentos(formularioAgendamento:Agendamento){
-        //const realizarAgendamento = Agendamentos.getrealizarAgendamento(user)
-        //return realizarAgendamento
-    }
-    getPontos(user:Cliente){
-        //const pontos = Renach.getPontos(user)
-        //return pontos
+    @OneToMany(()=> Agendamento, (agendamento)=> agendamento.user)
+    @JoinColumn()
+    agendamentos?: Agendamento[]
 
-    }
-    getSituacao(){
-        //const situ = Renach.getSituacao(user)
-        //return situ
-
-    }
-    
-}export{Cliente}
+}

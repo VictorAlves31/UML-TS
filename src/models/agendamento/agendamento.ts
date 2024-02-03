@@ -1,33 +1,36 @@
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, DataSource } from "typeorm";
 import { Cliente } from "../usuario/cliente";
-class Agendamento{
-    idAgendamento: string;
-    data: Date;
-    tipoServico: string;
-    taxa : Number;
-    local : string;
-    status : boolean;
+import { Servico } from "../servico/servico";
 
-    constructor(){
-        this.idAgendamento = '';
-        this.data = new Date;
-        this.tipoServico = '';
-        this.taxa = 0;
-        this.local = '';
-        this.status = true;
-    }
+@Entity()
+export class Agendamento{
+    @PrimaryGeneratedColumn()
+    idAgendamento?: number;
 
-    getstatus(){
+    @Column()
+    data?: Date;
 
-    }
-    getAgendamentos(user:Cliente){
-        //const response = this.repositoryAgendamentos.findMany(user)
-        //return response
+    @Column()
+    tipoServico?: string;
 
-    }
-    getRealizarAgendamentos(formularioAgendamento:Agendamento){
-        //const response = this.repositoryAgendamento.create(formularioAgendamento)
-        //return response
+    @Column()
+    taxa?: Number;
+    
+    @Column()
+    local?: string;
 
-    }
+    @Column()
+    status?: boolean;
 
-} export {Agendamento}
+    @ManyToOne(()=> Cliente, (user) => user.agendamentos)
+    @JoinColumn()
+    user?: Cliente;
+
+    @OneToMany(()=> Servico, (service)=> service.tipo)
+    @JoinColumn()
+    service?: Servico[];
+
+
+
+}
+
