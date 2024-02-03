@@ -1,49 +1,17 @@
-class Renach{
-    pontos: string;
-    validade: string;
-    situacao: string;
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
-    constructor(){
-        this.pontos = '';
-        this.validade = '';
-        this.situacao = '';
-    }
+@Entity()
+export class Renach{
+    @PrimaryColumn()
+    numberRenach?:number;
 
+    @Column()
+    pontos?: number;
 
-    DBRENACH = {
+    @Column()
+    validade?: Date;
 
-        12323213: {
-            pontos : 3,
-            validade: '30/12/2024',
-            situacao: 'OK'
-        },
+    @Column()
+    situacao?: string;
 
-        1442: {
-            pontos : 3,
-            validade: '30/12/2024',
-            situacao: 'OK'
-        },
-
-        100:{
-            pontos : 3,
-            validade: '30/12/2024',
-            situacao: 'OK'
-        },
-
-    }
-
-    getpontos(){
-        //const response = this.repositoryRenach.findOne(user)
-        //return response
-    }
-    getvalidade(){
-        //const response = this.repositoryRenach.findOne(user)
-        //return response
-    }
-    getsituacao(){
-        return this.DBRENACH[100]
-        //const response = this.repositoryRenach.findOne(user)
-        //return response
-    }
-
-}export {Renach}
+}

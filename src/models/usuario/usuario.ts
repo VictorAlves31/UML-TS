@@ -1,25 +1,20 @@
-class Usuario{
-    login: string;
-    statusLogin: boolean;
-    senha: string;
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-    constructor(){
-        this.login = '';
-        this.senha = '';
-        this.statusLogin = true;
+@Entity()
+export class Usuario{
+    @PrimaryGeneratedColumn()
+    idUser?: number;
 
-    }
+    @Column()
+    nome?: string;
 
+    @Column()
+    login?: string;
 
-    public verifyLogin(login: string,senha: string) : boolean{
-        if (login === this.login && senha === this.senha){
-            return true
-        }else{
-            return false
-        }
+    @Column()
+    statusLogin?: boolean;
 
-        
-    }
+    @Column()
+    senha?: string;
 
-
-} export {Usuario}
+}

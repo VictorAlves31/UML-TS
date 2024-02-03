@@ -10,9 +10,13 @@
   "author": "Victor Alves",
   "license": "ISC",
   "dependencies": {
-    "ts": "^0.2.2"
+    "mysql": "^2.18.1",
+    "pg": "^8.11.3",
+    "ts": "^0.0.0",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
+    "@types/node": "^20.11.16",
     "typescript": "^5.3.3"
   }
 }

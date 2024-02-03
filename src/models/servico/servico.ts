@@ -1,15 +1,18 @@
-class Servico{
-    tipo: string;
-    valor: Number;
-    
-    constructor(){
-        this.tipo = '';
-        this.valor = 0;
-    }
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Agendamento } from "../agendamento/agendamento";
 
-    getvalor(){
-        //const response = this.repositoryValor.findOne(servico)
-        //return response
-    }
+@Entity()
+export class Servico{
+    @PrimaryGeneratedColumn()
+    idService?:number;
+
+    @Column()
+    tipo?: string;
+
+    @Column()
+    valor?: Number;
+
+    @ManyToOne(()=>Agendamento, (agendamento) => agendamento.service)
+    agendamentos?:Agendamento
 
 }
