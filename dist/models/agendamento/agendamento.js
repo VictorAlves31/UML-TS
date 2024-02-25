@@ -13,7 +13,30 @@ exports.Agendamento = void 0;
 const typeorm_1 = require("typeorm");
 const cliente_1 = require("../usuario/cliente");
 const servico_1 = require("../servico/servico");
+// Definição do Mediador
+class AgendamentoMediator {
+    constructor() { }
+    static getInstance() {
+        if (!AgendamentoMediator.instance) {
+            AgendamentoMediator.instance = new AgendamentoMediator();
+        }
+        return AgendamentoMediator.instance;
+    }
+    // Método para processar agendamentos
+    processarAgendamento(agendamento) {
+        // Lógica para processar o agendamento, coordenando com outras partes do sistema
+        //
+        //sendNotification(agendamento.user, "Agendamento realizado com sucesso!");
+        console.log("Enviada notificação de agendamento ao funcionário responsável");
+        //
+        // Por exemplo, enviar notificações, atualizar informações, etc.
+    }
+}
 let Agendamento = class Agendamento {
+    constructor() {
+        // Registra o agendamento no mediador quando criado
+        AgendamentoMediator.getInstance().processarAgendamento(this);
+    }
 };
 exports.Agendamento = Agendamento;
 __decorate([
@@ -51,5 +74,6 @@ __decorate([
     __metadata("design:type", Array)
 ], Agendamento.prototype, "service", void 0);
 exports.Agendamento = Agendamento = __decorate([
-    (0, typeorm_1.Entity)()
+    (0, typeorm_1.Entity)(),
+    __metadata("design:paramtypes", [])
 ], Agendamento);

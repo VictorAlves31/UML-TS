@@ -11,7 +11,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Usuario = void 0;
 const typeorm_1 = require("typeorm");
+// Estado Concreto: Estado Ativo
+class Ativo {
+    constructor(usuario) {
+        this.usuario = usuario;
+    }
+    logar() {
+        console.log("O usuário já está logado.");
+    }
+    deslogar() {
+        console.log("Deslogando usuário...");
+        this.usuario.statusLogin = false;
+    }
+}
+// Estado Concreto: Estado Inativo
+class Inativo {
+    constructor(usuario) {
+        this.usuario = usuario;
+    }
+    logar() {
+        console.log("Logando usuário...");
+        this.usuario.statusLogin = true;
+    }
+    deslogar() {
+        console.log("O usuário já está deslogado.");
+    }
+}
 let Usuario = class Usuario {
+    constructor() {
+        // Por padrão, quando um usuário é criado, ele está inativo
+        this.estado = new Inativo(this);
+    }
+    // Métodos para mudar o estado do usuário
+    logar() {
+        this.estado.logar();
+    }
+    deslogar() {
+        this.estado.deslogar();
+    }
 };
 exports.Usuario = Usuario;
 __decorate([
@@ -35,5 +72,6 @@ __decorate([
     __metadata("design:type", String)
 ], Usuario.prototype, "senha", void 0);
 exports.Usuario = Usuario = __decorate([
-    (0, typeorm_1.Entity)()
+    (0, typeorm_1.Entity)(),
+    __metadata("design:paramtypes", [])
 ], Usuario);
